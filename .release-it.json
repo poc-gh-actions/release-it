@@ -15,7 +15,7 @@
   "github": {
     "release": true,
     "releaseName": "Release v${version}",
-    "autoGenerate": true
+    "releaseNotes": "git log --no-merges --pretty=format:\"* %s %h\" ${latestTag}...main"
   },
   "npm": {
     "publish": false
