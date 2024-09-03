@@ -1,5 +1,17 @@
 
 
+## [1.5.3](https://github.com/poc-gh-actions/release-it/compare/v1.5.2...v1.5.3) (2024-09-03)
+
+
+### Code Refactoring
+
+* reajustando o breguete ([6ea3d32](https://github.com/poc-gh-actions/release-it/commit/6ea3d322ee8dd788084b1c8063f45f9e3fed4d3d))
+
+
+### Continuous Integration
+
+* Ajustando o workflow ([d521ccd](https://github.com/poc-gh-actions/release-it/commit/d521ccd841b94874048f7bcaf08752d8703499d0))
+
 ## [1.5.2](https://github.com/poc-gh-actions/release-it/compare/v1.5.1...v1.5.2) (2024-09-03)
 
 
