@@ -14,7 +14,7 @@
   "github": {
     "release": true,
     "releaseName": "Release v${version}",
-    "releaseNotes": true
+    "releaseNotes": "npx auto-changelog --stdout --commit-limit true -u --template https://raw.githubusercontent.com/release-it/release-it/master/templates/changelog-compact.hbs"
   },
   "npm": {
     "publish": false
