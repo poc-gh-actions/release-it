@@ -1,5 +1,12 @@
 
 
+## 1.2.1 (2024-09-03)
+
+
+### Bug Fixes
+
+* new version ([fac0b2e](https://github.com/poc-gh-actions/release-it/commit/fac0b2e83176f9cfdd7a2650f53a2e9403ff6924))
+
 ## 0.2.0 (2024-09-03)
 
 
