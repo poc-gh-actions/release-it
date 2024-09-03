@@ -1,5 +1,13 @@
 
 
+## [1.5.0](https://github.com/poc-gh-actions/release-it/compare/v1.4.0...v1.5.0) (2024-09-03)
+
+
+### Features
+
+* new feat ([9bcee19](https://github.com/poc-gh-actions/release-it/commit/9bcee1947f91073c0f6c25d1eade2edc8f789b0e))
+* new feat ([0a7233a](https://github.com/poc-gh-actions/release-it/commit/0a7233a75cd41057930abc606a08a689efddc397))
+
 ## 1.4.0 (2024-09-03)
 
 
