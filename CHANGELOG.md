@@ -1,5 +1,12 @@
 
 
+## 0.1.0 (2024-09-03)
+
+
+### Features
+
+* new teste ([6928cff](https://github.com/poc-gh-actions/release-it/commit/6928cff9680a2f1b661d276f7788a137c230ede3))
+
 ## 0.0.2 (2024-09-03)
 
 
