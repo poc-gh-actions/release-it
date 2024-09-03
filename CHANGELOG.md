@@ -1,5 +1,12 @@
 
 
+## 1.3.0 (2024-09-03)
+
+
+### Features
+
+* new line ([9f7918e](https://github.com/poc-gh-actions/release-it/commit/9f7918e3fe006afa57eea15cd2b9ef46d0854d67))
+
 ## 1.2.1 (2024-09-03)
 
 
