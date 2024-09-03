@@ -1,5 +1,12 @@
 
 
+## 0.1.1 (2024-09-03)
+
+
+### Bug Fixes
+
+* releaseNotes teste ([6c49603](https://github.com/poc-gh-actions/release-it/commit/6c4960326962f75c9b434399a0ff0c40cbe88efa))
+
 ## 0.1.0 (2024-09-03)
 
 
