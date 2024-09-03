@@ -20,7 +20,7 @@
         "types": [
           {
             "type": "feat",
-            "section": "Features"
+            "section": "🚀 Features"
           },
           {
             "type": "fix",
@@ -28,7 +28,7 @@
           },
           {
             "type": "docs",
-            "section": "Documentation",
+            "section": "📝 Documentation",
             "label": "📝 Documentation"
           },
           {
@@ -38,12 +38,12 @@
           },
           {
             "type": "refactor",
-            "section": "Code Refactoring",
+            "section": "⚙️ Code Refactoring",
             "label": "⚙️ Refactor"
           },
           {
             "type": "perf",
-            "section": "Performance Improvements",
+            "section": "🚀 Performance Improvements",
             "label": "🚀 Performance"
           },
           {
