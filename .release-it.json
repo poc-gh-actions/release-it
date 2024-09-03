@@ -1,0 +1,42 @@
+{
+  "$schema": "https://unpkg.com/release-it/schema/release-it.json",
+  "git": {
+    "tagName": "v${version}",
+    "commitMessage": "chore(release): ${version}",
+    "requireCleanWorkingDir": false
+  },
+  "hooks": {
+    "after:git:release": "echo After git push, before github release",
+    "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}.",
+    "before:git:release": [
+      "git add --all"
+    ]
+  },
+  "github": {
+    "release": true,
+    "releaseName": "Release v${version}",
+    "autoGenerate": true
+  },
+  "npm": {
+    "publish": false
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": {
+        "name": "conventionalcommits",
+        "types": [
+          {
+            "type": "feat",
+            "section": "Features"
+          }, 
+          {
+            "type": "fix",
+            "section": "Bug Fixes"
+          }, 
+          {}
+        ]        
+      },
+      "infile": "CHANGELOG.md"
+    }
+  }
+}
