@@ -1,5 +1,12 @@
 
 
+## 1.3.1 (2024-09-03)
+
+
+### Bug Fixes
+
+* xpto ([41c8e38](https://github.com/poc-gh-actions/release-it/commit/41c8e381baf3156cf2bd1380fb4beef179f6109b))
+
 ## 1.3.0 (2024-09-03)
 
 
