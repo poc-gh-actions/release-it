@@ -1,5 +1,12 @@
 
 
+## [1.6.0](https://github.com/poc-gh-actions/release-it/compare/v1.5.5...v1.6.0) (2024-09-03)
+
+
+### 🚀 Features
+
+* NOVA VERSAO ([e12ccb5](https://github.com/poc-gh-actions/release-it/commit/e12ccb530618ea80fd8b50339045fdfec1d35f5c))
+
 ## [1.5.5](https://github.com/poc-gh-actions/release-it/compare/v1.5.4...v1.5.5) (2024-09-03)
 
 
