@@ -1,5 +1,12 @@
 
 
+## [1.3.4](https://github.com/poc-gh-actions/release-it/compare/v1.3.3...v1.3.4) (2024-09-03)
+
+
+### Bug Fixes
+
+* update node version ([fa3070f](https://github.com/poc-gh-actions/release-it/commit/fa3070f85aaeb84e87f36a6d2e166a1b9d1351a9))
+
 ## 1.3.3 (2024-09-03)
 
 ## 1.3.2 (2024-09-03)
