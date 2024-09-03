@@ -1,5 +1,12 @@
 
 
+## 1.4.0 (2024-09-03)
+
+
+### Features
+
+* teste ([71d84d7](https://github.com/poc-gh-actions/release-it/commit/71d84d7e1ebca15fac8e413426de5c01d6d69d6d))
+
 ## 1.3.10 (2024-09-03)
 
 ## 1.3.9 (2024-09-03)
