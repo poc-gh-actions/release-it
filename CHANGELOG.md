@@ -1,5 +1,17 @@
 
 
+## [1.5.4](https://github.com/poc-gh-actions/release-it/compare/v1.5.3...v1.5.4) (2024-09-03)
+
+
+### 📝 Documentation
+
+* Adicionando documentação ([a38d3b6](https://github.com/poc-gh-actions/release-it/commit/a38d3b6984988fdfaecfa1ab3606c111cd4ebe28))
+
+
+### 🚀 Performance Improvements
+
+* adicionando figurinhas ([e261aa2](https://github.com/poc-gh-actions/release-it/commit/e261aa2d99139e697bc56634283fd67553483bb2))
+
 ## [1.5.3](https://github.com/poc-gh-actions/release-it/compare/v1.5.2...v1.5.3) (2024-09-03)
 
 
