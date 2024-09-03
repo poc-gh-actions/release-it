@@ -8,8 +8,7 @@
   },
   "github": {
     "release": true,
-    "releaseName": "Release v${version}",
-    "web": true
+    "releaseName": "Release v${version}"
   },
   "npm": {
     "publish": false
