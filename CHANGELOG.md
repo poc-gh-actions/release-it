@@ -1,5 +1,12 @@
 
 
+## [1.5.1](https://github.com/poc-gh-actions/release-it/compare/v1.5.0...v1.5.1) (2024-09-03)
+
+
+### Bug Fixes
+
+* update workflow ([bfcef2b](https://github.com/poc-gh-actions/release-it/commit/bfcef2b80f623e3bab2d7006ebf6ce653069c5fc))
+
 ## [1.5.0](https://github.com/poc-gh-actions/release-it/compare/v1.4.0...v1.5.0) (2024-09-03)
 
 
