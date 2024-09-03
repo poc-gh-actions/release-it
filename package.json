@@ -1,6 +1,6 @@
 {
     "name": "release-it",
-    "version": "1.5.4",
+    "version": "1.5.5",
     "scripts": {
         "release": "release-it --ci"
     },

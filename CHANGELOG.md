@@ -1,5 +1,17 @@
 
 
+## [1.5.5](https://github.com/poc-gh-actions/release-it/compare/v1.5.4...v1.5.5) (2024-09-03)
+
+
+### ⚙️ Code Refactoring
+
+* Testando o refactor ([d650c8a](https://github.com/poc-gh-actions/release-it/commit/d650c8a0870e0ed4b456f260fac54dd5236a3e06))
+
+
+### Continuous Integration
+
+* Atualizando o workflow ([4646a99](https://github.com/poc-gh-actions/release-it/commit/4646a99e226a037f67db1c5f71ea421ec3c92c4f))
+
 ## [1.5.4](https://github.com/poc-gh-actions/release-it/compare/v1.5.3...v1.5.4) (2024-09-03)
 
 
