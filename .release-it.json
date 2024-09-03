@@ -16,7 +16,7 @@
   "github": {
     "release": true,
     "releaseName": "Release v${version}",
-    "releaseNotes": null
+    "releaseNotes": "echo ${changelog}"
   },
   "npm": {
     "publish": false
