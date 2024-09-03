@@ -3,3 +3,4 @@ dist/
 example/
 package-lock.json
 yar-lock.json
+npm-debug.log
