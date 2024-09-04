@@ -29,7 +29,15 @@ jobs:
         git config --global user.email "${{ github.actor }}@users.noreply.github.com"
   
     - name: Create and publish release
+      id: release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         npm run release
+
+    - name: Send Teams Notification
+      if: steps.release.outcome == 'success'
+      run: |
+        curl -H 'Content-Type: application/json' \
+              -d '{"@type": "MessageCard", "summary": "New Release", "themeColor": "0076D7", "title": "New Release Published", "text": "A new release has been published: v${{ github.ref_name }}", "potentialAction": [{"@type": "OpenUri", "name": "View Release", "targets": [{"os": "default", "uri": "https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}"}]}]}' \
+              ${{ secrets.TEAMS_WEBHOOK }}
