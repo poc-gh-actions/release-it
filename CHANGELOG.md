@@ -1,5 +1,16 @@
 
 
+## [2.0.0](https://github.com/poc-gh-actions/release-it/compare/v1.6.1...v2.0.0) (2024-09-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* **api:** o método getUser foi removido. Use getUserById em seu lugar.
+
+### 🚀 Features
+
+* **api:** remove o método deprecated getUser ([22b9086](https://github.com/poc-gh-actions/release-it/commit/22b9086802b2f03a621b41a8ed9f0026c842f5c0))
+
 ## [1.6.1](https://github.com/poc-gh-actions/release-it/compare/v1.6.0...v1.6.1) (2024-09-04)
 
 ## [1.6.0](https://github.com/poc-gh-actions/release-it/compare/v1.5.5...v1.6.0) (2024-09-03)
