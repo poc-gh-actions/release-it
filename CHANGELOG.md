@@ -1,5 +1,12 @@
 
 
+## [2.0.5](https://github.com/poc-gh-actions/release-it/compare/v2.0.4...v2.0.5) (2024-09-04)
+
+
+### Continuous Integration
+
+* **teams:** Add teams notifications ([35033e4](https://github.com/poc-gh-actions/release-it/commit/35033e4232351ec29825a1ae7264f143d6e52f45))
+
 ## [2.0.4](https://github.com/poc-gh-actions/release-it/compare/v2.0.3...v2.0.4) (2024-09-04)
 
 
