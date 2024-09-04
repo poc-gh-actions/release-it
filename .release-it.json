@@ -20,16 +20,16 @@
         "types": [
           {
             "type": "feat",
-            "section": "🚀 Features" 
+            "section": ":rocket: Features" 
           },
           {
             "type": "fix",
-            "section": "Bug Fixes"
+            "section": ":bug: Bug Fixes"
           },
           {
             "type": "docs",
-            "section": "📝 Documentation",
-            "label": "📝 Documentation"
+            "section": ":memo: Documentation",
+            "label": ":memo: Documentation"
           },
           {
             "type": "style",
@@ -38,13 +38,13 @@
           },
           {
             "type": "refactor",
-            "section": "⚙️ Code Refactoring",
-            "label": "⚙️ Refactor"
+            "section": ":gear: Code Refactoring",
+            "label": ":gear: Refactor"
           },
           {
             "type": "perf",
-            "section": "🚀 Performance Improvements",
-            "label": "🚀 Performance"
+            "section": ":rocket: Performance Improvements",
+            "label": ":rocket: Performance"
           },
           {
             "type": "test",
@@ -63,14 +63,14 @@
           },
           {
             "type": "chore",
-            "section": "Chores",
-            "hidden": true
+            "section": ":house: Internal",
+            "hidden": false
           }, 
           {}
         ]
       },
       "infile": "CHANGELOG.md"
-      
+
     }
   }
 }
