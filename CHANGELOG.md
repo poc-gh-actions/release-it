@@ -1,5 +1,12 @@
 
 
+## [2.0.1](https://github.com/poc-gh-actions/release-it/compare/v2.0.0...v2.0.1) (2024-09-04)
+
+
+### :house: Internal
+
+* Ajustando icones ([2c38250](https://github.com/poc-gh-actions/release-it/commit/2c38250a10028f4f7f9c730641c2f3377c5c8d83))
+
 ## [2.0.0](https://github.com/poc-gh-actions/release-it/compare/v1.6.1...v2.0.0) (2024-09-04)
 
 
