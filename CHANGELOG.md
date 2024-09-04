@@ -1,5 +1,7 @@
 
 
+## [1.6.1](https://github.com/poc-gh-actions/release-it/compare/v1.6.0...v1.6.1) (2024-09-04)
+
 ## [1.6.0](https://github.com/poc-gh-actions/release-it/compare/v1.5.5...v1.6.0) (2024-09-03)
 
 
