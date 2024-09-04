@@ -42,7 +42,7 @@ jobs:
     - name: Send Teams Notification
       if: steps.release.outcome == 'success'
       run: |
-        curl -H 'Content-Type: application/json' \
+        curl -s -H 'Content-Type: application/json' \
             -d '{
               "@type": "MessageCard",
               "summary": "New Release Available",
