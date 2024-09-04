@@ -1,5 +1,12 @@
 
 
+## [2.0.7](https://github.com/poc-gh-actions/release-it/compare/v2.0.6...v2.0.7) (2024-09-04)
+
+
+### :gear: Code Refactoring
+
+* habilitando o modo silencioso ([e46a420](https://github.com/poc-gh-actions/release-it/commit/e46a420507aada74ce173911432923282b94f55a))
+
 ## [2.0.6](https://github.com/poc-gh-actions/release-it/compare/v2.0.5...v2.0.6) (2024-09-04)
 
 
