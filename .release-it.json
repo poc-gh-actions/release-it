@@ -69,7 +69,7 @@
           {}
         ]
       },
-      "infile": "CHANGELOG.md"
+      "infile": "CHANGELOG.md" 
     }
   }
 }
