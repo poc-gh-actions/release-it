@@ -1,5 +1,12 @@
 
 
+## [2.0.3](https://github.com/poc-gh-actions/release-it/compare/v2.0.2...v2.0.3) (2024-09-04)
+
+
+### :bug: Bug Fixes
+
+* Ajustando bug imaginário ([1a970d6](https://github.com/poc-gh-actions/release-it/commit/1a970d675e556c1608c2e4e81cb3cd404340e48b))
+
 ## [2.0.2](https://github.com/poc-gh-actions/release-it/compare/v2.0.1...v2.0.2) (2024-09-04)
 
 ## [2.0.1](https://github.com/poc-gh-actions/release-it/compare/v2.0.0...v2.0.1) (2024-09-04)
