@@ -43,5 +43,38 @@ jobs:
       if: steps.release.outcome == 'success'
       run: |
         curl -H 'Content-Type: application/json' \
-              -d '{"@type": "MessageCard", "summary": "New Release", "themeColor": "0076D7", "title": "New Release Published", "text": "A new release has been published: ${{ env.release_version }}", "potentialAction": [{"@type": "OpenUri", "name": "View Release", "targets": [{"os": "default", "uri": "https://github.com/${{ github.repository }}/releases/tag/${{ env.release_version }}"}]}]}' \
-              ${{ secrets.TEAMS_WEBHOOK }}
+            -d '{
+              "@type": "MessageCard",
+              "summary": "New Release Available",
+              "themeColor": "0076D7",
+              "title": "🚀 New Release Published!",
+              "text": "A new release has been published for the **${{ github.repository }}** repository:\n\n**Version**: ${{ env.release_version }}\n\nPlease check the [release notes](https://github.com/${{ github.repository }}/releases/tag/${{ env.release_version }}) for detailed information on the changes and improvements. \n\n**Important**: Ensure that you update this dependency in your projects that use it. Pay special attention to any breaking changes and adapt your code accordingly.\n\nThank you!",
+              "sections": [
+                {
+                  "facts": [
+                    {
+                      "name": "Repository",
+                      "value": "${{ github.repository }}"
+                    },
+                    {
+                      "name": "Version",
+                      "value": "${{ env.release_version }}"
+                    }
+                  ]
+                }
+              ],
+              "potentialAction": [
+                {
+                  "@type": "OpenUri",
+                  "name": "View Release",
+                  "targets": [
+                    {
+                      "os": "default",
+                      "uri": "https://github.com/${{ github.repository }}/releases/tag/${{ env.release_version }}"
+                    }
+                  ]
+                }
+              ]
+            }' \
+            ${{ secrets.TEAMS_WEBHOOK }}
+    
