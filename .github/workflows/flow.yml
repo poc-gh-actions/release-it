@@ -48,7 +48,7 @@ jobs:
               "summary": "New Release Available",
               "themeColor": "0076D7",
               "title": "🚀 New Release Published!",
-              "text": "A new release has been published for the **${{ github.repository }}** repository:\n\n**Version**: ${{ env.release_version }}\n\nPlease check the [release notes](https://github.com/${{ github.repository }}/releases/tag/${{ env.release_version }}) for detailed information on the changes and improvements. \n\n**Important**: Ensure that you update this dependency in your projects that use it. Pay special attention to any breaking changes and adapt your code accordingly.\n\nThank you!",
+              "text": "A new release has been published for the **${{ github.repository }}** repository in the **@General** channel:\n\n**Version**: ${{ env.release_version }}\n\nPlease check the [release notes](https://github.com/${{ github.repository }}/releases/tag/${{ env.release_version }}) for detailed information on the changes and improvements. \n\n**Important**: Ensure that you update this dependency in your projects that use it. Pay special attention to any breaking changes and adapt your code accordingly.\n\nThank you!",
               "sections": [
                 {
                   "facts": [
