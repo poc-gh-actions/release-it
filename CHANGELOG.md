@@ -1,5 +1,12 @@
 
 
+## [2.0.9](https://github.com/poc-gh-actions/release-it/compare/v2.0.8...v2.0.9) (2024-09-05)
+
+
+### Continuous Integration
+
+* update workflow ([5537d9b](https://github.com/poc-gh-actions/release-it/commit/5537d9bb344cbc6772455f6f5a7fb01da82ed1f1))
+
 ## [2.0.8](https://github.com/poc-gh-actions/release-it/compare/v2.0.7...v2.0.8) (2024-09-04)
 
 ## [2.0.7](https://github.com/poc-gh-actions/release-it/compare/v2.0.6...v2.0.7) (2024-09-04)
