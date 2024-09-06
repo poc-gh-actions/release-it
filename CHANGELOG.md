@@ -1,5 +1,12 @@
 
 
+## [3.1.0](https://github.com/poc-gh-actions/release-it/compare/v3.0.0...v3.1.0) (2024-09-06)
+
+
+### :rocket: Features
+
+* **template:** add template for teams message ([237beee](https://github.com/poc-gh-actions/release-it/commit/237beee0bf9c8dbd45d08d9e6c9695679a2f2037))
+
 ## [3.0.0](https://github.com/poc-gh-actions/release-it/compare/v2.1.0...v3.0.0) (2024-09-06)
 
 
