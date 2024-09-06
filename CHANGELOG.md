@@ -1,5 +1,21 @@
 
 
+## [3.0.0](https://github.com/poc-gh-actions/release-it/compare/v2.1.0...v3.0.0) (2024-09-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* **workflow:** agora colocando a app para rodar 
+
+### :rocket: Features
+
+* **workflow:** agora colocando a app para rodar  ([b94ed74](https://github.com/poc-gh-actions/release-it/commit/b94ed74614596df860806d2ee12ae9b5860b2a7e))
+
+
+### Continuous Integration
+
+* teste sem app token ([f7ba417](https://github.com/poc-gh-actions/release-it/commit/f7ba417af7ec17639549749d8121b6915a249fc0))
+
 ## [2.1.0](https://github.com/poc-gh-actions/release-it/compare/v2.0.9...v2.1.0) (2024-09-06)
 
 
