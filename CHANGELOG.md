@@ -1,5 +1,23 @@
 
 
+## [2.1.0](https://github.com/poc-gh-actions/release-it/compare/v2.0.9...v2.1.0) (2024-09-06)
+
+
+### :rocket: Features
+
+* testando novo método ([2c89c1f](https://github.com/poc-gh-actions/release-it/commit/2c89c1f6db34270a2e392409f4b34b9ba677e9cf))
+
+
+### Continuous Integration
+
+* update flow ([d5248e7](https://github.com/poc-gh-actions/release-it/commit/d5248e7627f5ec48c59d3987bf5e3aad8a6b5eb0))
+* update workflow ([b277a65](https://github.com/poc-gh-actions/release-it/commit/b277a65beb2c4a4281040bc05c5ad2c02c063aa3))
+
+
+### :house: Internal
+
+* update package.json ([13929ea](https://github.com/poc-gh-actions/release-it/commit/13929ea40df4d97bf36a1eb5c3543b574d3903af))
+
 ## [2.0.9](https://github.com/poc-gh-actions/release-it/compare/v2.0.8...v2.0.9) (2024-09-05)
 
 
