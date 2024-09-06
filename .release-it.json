@@ -3,7 +3,7 @@
   "git": {
     "tagName": "v${version}",
     "tagAnnotation": "v${version}",
-    "commitMessage": "chore(release): ${version}",
+    "commitMessage": "chore(release): ${version} [skip ci]",
     "requireCleanWorkingDir": false
   },
   "github": {
