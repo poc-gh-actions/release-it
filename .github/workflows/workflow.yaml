@@ -1,0 +1,8 @@
+name: CI/CD
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  pipeline:
+    uses: poc-gh-actions/release-it/.github/workflows/flow.yml@main
