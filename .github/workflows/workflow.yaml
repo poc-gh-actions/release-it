@@ -3,6 +3,10 @@ on:
   push:
     branches:
       - main
+
+permissions:
+  contents: write
+  pull-requests: write
 jobs:
   pipeline:
     uses: poc-gh-actions/release-it/.github/workflows/flow.yml@main
