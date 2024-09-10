@@ -1,5 +1,18 @@
 
 
+## [3.2.0](https://github.com/poc-gh-actions/release-it/compare/v3.1.0...v3.2.0) (2024-09-10)
+
+
+### :rocket: Features
+
+* add new workflow ([5a4ceec](https://github.com/poc-gh-actions/release-it/commit/5a4ceececade469c7ac2d7cf20e27bb6010497e1))
+
+
+### :house: Internal
+
+* boy ([94cedd9](https://github.com/poc-gh-actions/release-it/commit/94cedd93823114d31481d14fe1d273dc4d52b1b6))
+* secrets inherit ([a4fbc01](https://github.com/poc-gh-actions/release-it/commit/a4fbc01f35f4f36775f5cb441758a73a89db8da4))
+
 ## [3.1.0](https://github.com/poc-gh-actions/release-it/compare/v3.0.0...v3.1.0) (2024-09-06)
 
 
