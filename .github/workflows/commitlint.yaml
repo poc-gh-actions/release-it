@@ -32,51 +32,38 @@ jobs:
         if: github.event_name == 'push'
         run: npx commitlint --last --verbose
 
-      - name: Run commitlint and set result
+      - name: Validate commits with Commitlint
         id: commitlint
-        continue-on-error: true
         run: |
           result=$(npx commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose)
-          
-          # Print the full result for debugging purposes
           echo "$result"
-          
-          # Check for the 'found 0 problems' string in the entire result
+          echo "RESULT=$result" >> $GITHUB_ENV
           if echo "$result" | grep -q 'found 0 problems'; then
             echo "COMMITLINT_RESULT=success" >> $GITHUB_ENV
           else
             echo "COMMITLINT_RESULT=failure" >> $GITHUB_ENV
+            exit 1
           fi
 
+  create_pr_comment:
+    runs-on: ubuntu-latest
+    needs: commitlint
+    if: always() && github.event_name == 'pull_request'
+    steps:
       - name: Create PR comment
         if: github.event_name == 'pull_request'
         uses: actions/github-script@v6
         with:
           script: |
-            const { data: comments } = await github.rest.issues.listComments({
+            const result = process.env.RESULT;
+            const commitlintResult = process.env.COMMITLINT_RESULT;
+            const commentBody = commitlintResult === 'success'
+              ? '🎉 Commitlint check passed! All commits follow the required standards. 🚀'
+              : `❌ Commitlint check failed ❌\n\n📝 Result:\n\n${result}\n\nSome of your commits do not adhere to the required standards. Please review and adjust them to follow the commit message guidelines. 🛠️🔍`;
+
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: context.issue.number
+              body: commentBody
             });
-            
-            const hasComment = comments.some(comment => comment.user.login === 'github-actions[bot]' && comment.body.includes('Commitlint result:'));
-
-            const commitlintResult = process.env.COMMITLINT_RESULT === 'success'
-              ? `🎉 **Commitlint Check Complete** 🎉\n\nAll your commits are looking great! 🎯 Keep up the good work! 🚀`
-              : `❌ **Commitlint Check Failed** ❌\n\nSome of your commits do not adhere to the required standards. Please review and adjust them to follow the commit message guidelines. 🛠️🔍`;
-
-            if (hasComment) {
-              await github.rest.issues.updateComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                comment_id: comments.find(comment => comment.user.login === 'github-actions[bot]' && comment.body.includes('Commitlint result:')).id,
-                body: commitlintResult
-              });
-            } else {
-              await github.rest.issues.createComment({
-                issue_number: context.issue.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                body: commitlintResult
-              });
-            }
