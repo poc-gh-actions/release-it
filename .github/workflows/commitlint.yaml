@@ -33,6 +33,7 @@ jobs:
       - name: Validate commits with Commitlint
         id: commitlint
         run: |
+          echo "Running commitlint..."
           result=$(npx commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose)
           echo "$result"
           echo "commitlint_result_all=$result" >> $GITHUB_ENV
@@ -42,6 +43,7 @@ jobs:
             echo "commitlint_result=failure" >> $GITHUB_ENV
             exit 1
           fi
+        shell: /usr/bin/bash -e {0}
 
   create_pr_comment:
     runs-on: ubuntu-latest
