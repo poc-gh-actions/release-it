@@ -41,7 +41,9 @@ jobs:
         if: github.event_name == 'pull_request'
         id: check-commitlint-result
         run: |
-          if grep -q 'found 0 problems' <<< "$(npx commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose)"; then
+          result=$(npx commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose)
+          echo "$result"
+          if echo "$result" | grep -q 'found 0 problems'; then
             echo "COMMITLINT_RESULT=success" >> $GITHUB_ENV
           else
             echo "COMMITLINT_RESULT=failure" >> $GITHUB_ENV
