@@ -52,14 +52,17 @@ jobs:
     runs-on: ubuntu-latest
     needs: commitlint
     if: always() && github.event_name == 'pull_request'
+    env:
+      RESULT: ${{ needs.commitlint.outputs.commitlint_result_all }}
+      COMMITLINT_RESULT: ${{ needs.commitlint.outputs.commitlint_result }}
     steps:
       - name: Create PR comment
         if: github.event_name == 'pull_request'
         uses: actions/github-script@v7
         with:
           script: |
-            const result = '${{ needs.commitlint.outputs.commitlint_result_all }}';
-            const commitlintResult = '${{ needs.commitlint.outputs.commitlint_result }}';
+            const result = process.env.RESULT;
+            const commitlintResult = process.env.COMMITLINT_RESULT;
             const commentBody = commitlintResult === 'success'
               ? '🎉 Commitlint check passed! All commits follow the required standards. 🚀'
               : `❌ Commitlint check failed ❌\n\n📝 Result:\n\n${result}\n\nSome of your commits do not adhere to the required standards. Please review and adjust them to follow the commit message guidelines. 🛠️🔍`;
