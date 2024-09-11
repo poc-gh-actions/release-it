@@ -3,9 +3,11 @@ name: Run Commitlint on PR
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-  push:
     branches:
-      - main
+      - 'main'    
+  push:
+    branches-ignore:
+      - 'main'
 
 jobs:
   commitlint:
