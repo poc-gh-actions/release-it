@@ -32,16 +32,20 @@ jobs:
         if: github.event_name == 'push'
         run: npx commitlint --last --verbose
 
-      - name: Check commitlint result
-        if: github.event_name == 'pull_request'
-        id: check-commitlint-result
+      - name: Run commitlint and set result
+        id: commitlint
         run: |
           result=$(npx commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose)
+          
+          # Print the full result for debugging purposes
           echo "$result"
+          
+          # Check for the 'found 0 problems' string in the entire result
           if echo "$result" | grep -q 'found 0 problems'; then
             echo "COMMITLINT_RESULT=success" >> $GITHUB_ENV
           else
             echo "COMMITLINT_RESULT=failure" >> $GITHUB_ENV
+          fi
 
       - name: Create PR comment
         if: github.event_name == 'pull_request'
