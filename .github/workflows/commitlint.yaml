@@ -33,8 +33,18 @@ jobs:
         run: npx commitlint --last --verbose
 
       - name: Validate PR commits with commitlint
+        id: commitlint
         if: github.event_name == 'pull_request'
         run: npx commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose
+
+      - name: Check commitlint result
+        if: github.event_name == 'pull_request'
+        id: check-commitlint-result
+        run: |
+          if grep -q 'found 0 problems' <<< "$(npx commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose)"; then
+            echo "COMMITLINT_RESULT=success" >> $GITHUB_ENV
+          else
+            echo "COMMITLINT_RESULT=failure" >> $GITHUB_ENV
 
       - name: Create PR comment
         if: github.event_name == 'pull_request'
@@ -48,26 +58,23 @@ jobs:
             });
             
             const hasComment = comments.some(comment => comment.user.login === 'github-actions[bot]' && comment.body.includes('Commitlint result:'));
-            
-            const resultMessage = process.env.COMMITLINT_RESULT.trim();
-            const formattedMessage = resultMessage.includes('found 0 problems')
-              ? `🎉 **Commitlint Check Complete** 🎉\n\n📝 **Result:**\n\n${resultMessage}\n\nAll your commits are looking great! 🎯 Keep up the good work! 🚀`
-              : `❌ **Commitlint Check Failed** ❌\n\n📝 **Result:**\n\n${resultMessage}\n\nSome of your commits do not adhere to the required standards. Please review and adjust them to follow the commit message guidelines. 🛠️🔍`;
+
+            const commitlintResult = process.env.COMMITLINT_RESULT === 'success'
+              ? `🎉 **Commitlint Check Complete** 🎉\n\nAll your commits are looking great! 🎯 Keep up the good work! 🚀`
+              : `❌ **Commitlint Check Failed** ❌\n\nSome of your commits do not adhere to the required standards. Please review and adjust them to follow the commit message guidelines. 🛠️🔍`;
 
             if (hasComment) {
               await github.rest.issues.updateComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 comment_id: comments.find(comment => comment.user.login === 'github-actions[bot]' && comment.body.includes('Commitlint result:')).id,
-                body: formattedMessage
+                body: commitlintResult
               });
             } else {
               await github.rest.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: formattedMessage
+                body: commitlintResult
               });
             }
-        env:
-          COMMITLINT_RESULT: ${{ steps.commitlint.outputs.result || '' }}
