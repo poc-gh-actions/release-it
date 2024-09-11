@@ -15,8 +15,8 @@ jobs:
   commitlint:
     runs-on: ubuntu-latest
     outputs:
-      RESULT: ${{ steps.commitlint.outputs.RESULT }}
-      COMMITLINT_RESULT: ${{ steps.commitlint.outputs.COMMITLINT_RESULT }}
+      commitlint_result_all: ${{ steps.commitlint.outputs.commitlint_result_all }}
+      commitlint_result: ${{ steps.commitlint.outputs.commitlint_result }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -38,14 +38,13 @@ jobs:
         if: github.event_name == 'pull_request'
         id: commitlint
         run: |
-          npx commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose
           result=$(npx commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose)
           echo "$result"
-          echo "RESULT=$result" >> $GITHUB_OUTPUT
+          echo "commitlint_result_all=$result" >> $GITHUB_OUTPUT
           if echo "$result" | grep -q 'found 0 problems'; then
-            echo "COMMITLINT_RESULT=success" >> $GITHUB_OUTPUT
+            echo "commitlint_result=success" >> $GITHUB_OUTPUT
           else
-            echo "COMMITLINT_RESULT=failure" >> $GITHUB_OUTPUT
+            echo "commitlint_result=failure" >> $GITHUB_OUTPUT
             exit 1
           fi
 
@@ -59,8 +58,8 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const result = '${{ needs.commitlint.outputs.RESULT }}';
-            const commitlintResult = '${{ needs.commitlint.outputs.COMMITLINT_RESULT }}';
+            const result = '${{ needs.commitlint.outputs.commitlint_result_all }}';
+            const commitlintResult = '${{ needs.commitlint.outputs.commitlint_result }}';
             const commentBody = commitlintResult === 'success'
               ? '🎉 Commitlint check passed! All commits follow the required standards. 🚀'
               : `❌ Commitlint check failed ❌\n\n📝 Result:\n\n${result}\n\nSome of your commits do not adhere to the required standards. Please review and adjust them to follow the commit message guidelines. 🛠️🔍`;
