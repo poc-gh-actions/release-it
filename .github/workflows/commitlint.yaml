@@ -15,8 +15,8 @@ jobs:
   commitlint:
     runs-on: ubuntu-latest
     outputs:
-      RESULT: ${ steps.commitlint.outputs.RESULT }
-      COMMITLINT_RESULT: ${ steps.commitlint.outputs.COMMITLINT_RESULT }
+      RESULT: ${{ steps.commitlint.outputs.RESULT }}
+      COMMITLINT_RESULT: ${{ steps.commitlint.outputs.COMMITLINT_RESULT }}
     steps:
       - uses: actions/checkout@v4
         with:
