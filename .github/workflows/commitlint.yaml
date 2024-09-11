@@ -57,8 +57,8 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const result = ${{ needs.commitlint.outputs.RESULT }};
-            const commitlintResult = ${{ needs.commitlint.outputs.COMMITLINT_RESULT }};
+            const result = '${{ needs.commitlint.outputs.RESULT }}';
+            const commitlintResult = '${{ needs.commitlint.outputs.COMMITLINT_RESULT }}';
             const commentBody = commitlintResult === 'success'
               ? '🎉 Commitlint check passed! All commits follow the required standards. 🚀'
               : `❌ Commitlint check failed ❌\n\n📝 Result:\n\n${result}\n\nSome of your commits do not adhere to the required standards. Please review and adjust them to follow the commit message guidelines. 🛠️🔍`;
