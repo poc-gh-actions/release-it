@@ -49,20 +49,25 @@ jobs:
             
             const hasComment = comments.some(comment => comment.user.login === 'github-actions[bot]' && comment.body.includes('Commitlint result:'));
             
+            const resultMessage = process.env.COMMITLINT_RESULT.trim();
+            const formattedMessage = resultMessage.includes('found 0 problems')
+              ? `🎉 **Commitlint Check Complete** 🎉\n\n📝 **Result:**\n\n${resultMessage}\n\nAll your commits are looking great! 🎯 Keep up the good work! 🚀`
+              : `❌ **Commitlint Check Failed** ❌\n\n📝 **Result:**\n\n${resultMessage}\n\nSome of your commits do not adhere to the required standards. Please review and adjust them to follow the commit message guidelines. 🛠️🔍`;
+
             if (hasComment) {
               await github.rest.issues.updateComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 comment_id: comments.find(comment => comment.user.login === 'github-actions[bot]' && comment.body.includes('Commitlint result:')).id,
-                body: `Commitlint result: ${process.env.COMMITLINT_RESULT}`
+                body: formattedMessage
               });
             } else {
               await github.rest.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                body: `Commitlint result: ${process.env.COMMITLINT_RESULT}`
+                body: formattedMessage
               });
             }
         env:
-          COMMITLINT_RESULT: ${{ steps.commitlint.outputs.result || 'Unknown result' }}
+          COMMITLINT_RESULT: ${{ steps.commitlint.outputs.result || '' }}
