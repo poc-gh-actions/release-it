@@ -1,0 +1,68 @@
+name: Run Commitlint on PR
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - 'main'    
+  # push:
+  #   branches-ignore:
+  #     - 'main'
+permissions:
+  pull-requests: write
+
+jobs:
+  commitlint:
+    runs-on: ubuntu-latest
+    outputs:
+      commitlint_result_all: ${{ steps.commitlint.outputs.commitlint_result_all }}
+      commitlint_result: ${{ steps.commitlint.outputs.commitlint_result }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Validate commits with Commitlint
+        id: commitlint
+        run: |
+          echo "Running commitlint..."
+          npx commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose | tee commitlint.log
+          if [ $? -eq 0 ]; then
+            echo "COMMITLINT_RESULT=success" >> $GITHUB_ENV
+          else
+            echo "COMMITLINT_RESULT=failure" >> $GITHUB_ENV
+          fi
+
+      - name: Read commitlint result
+        id: read_commitlint_result
+        run: |
+          RESULT=$(cat commitlint.log)
+          echo "RESULT<<EOF" >> $GITHUB_ENV
+          echo "$RESULT" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Create PR comment
+        uses: actions/github-script@v7
+        if: always() # Executa sempre, mas o conteúdo do comentário depende do resultado do commitlint
+        with:
+          script: |
+            const commitlintResult = process.env.COMMITLINT_RESULT;
+            const result = process.env.RESULT;
+            const commentBody = commitlintResult === 'success'
+              ? `🎉 Commitlint check passed! All commits follow the required standards. 🚀\n\n📝 Result:\n\n${result}`
+              : `❌ Commitlint check failed ❌\n\n📝 Result:\n\n${result}\n\nSome of your commits do not adhere to the required standards. Please review and adjust them to follow the commit message guidelines. 🛠️🔍`;
+
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: commentBody
+            });
