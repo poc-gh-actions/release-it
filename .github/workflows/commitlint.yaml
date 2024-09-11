@@ -57,7 +57,7 @@ jobs:
             const commitlintResult = process.env.COMMITLINT_RESULT;
             const result = process.env.RESULT;
             const commentBody = commitlintResult === 'success'
-              ? '🎉 Commitlint check passed! All commits follow the required standards. 🚀'
+              ? '🎉 Commitlint check passed! All commits follow the required standards. 🚀\n\n📝 Result:\n\n${result}'
               : `❌ Commitlint check failed ❌\n\n📝 Result:\n\n${result}\n\nSome of your commits do not adhere to the required standards. Please review and adjust them to follow the commit message guidelines. 🛠️🔍`;
 
             await github.rest.issues.createComment({
