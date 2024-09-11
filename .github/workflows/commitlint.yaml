@@ -34,6 +34,7 @@ jobs:
 
       - name: Run commitlint and set result
         id: commitlint
+        continue-on-error: true
         run: |
           result=$(npx commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose)
           
@@ -79,4 +80,3 @@ jobs:
                 body: commitlintResult
               });
             }
-              
