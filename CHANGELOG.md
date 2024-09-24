@@ -1,5 +1,16 @@
 
 
+## [4.0.0](https://github.com/poc-gh-actions/release-it/compare/v3.3.0...v4.0.0) (2024-09-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* add new bla bla bla
+
+### :rocket: Features
+
+* add new bla bla bla ([d65291e](https://github.com/poc-gh-actions/release-it/commit/d65291e81510fac389e658a3923d17ba6a54e595))
+
 ## [3.3.0](https://github.com/poc-gh-actions/release-it/compare/v3.2.0...v3.3.0) (2024-09-24)
 
 
