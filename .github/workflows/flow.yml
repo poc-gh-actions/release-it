@@ -41,13 +41,13 @@ jobs:
       id: get_tag
       run: echo "release_version=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
 
-    - name: Send Teams Notification
-      if: steps.release.outcome == 'success'
-      env:
-        GITHUB_REPOSITORY: ${{ github.repository }}
-        RELEASE_VERSION: ${{ env.release_version }}
-      run: |
-        envsubst < teams_template.json | curl -s -H 'Content-Type: application/json' \
-            -d @- \
-            ${{ secrets.TEAMS_WEBHOOK }}
+    # - name: Send Teams Notification
+    #   if: steps.release.outcome == 'success'
+    #   env:
+    #     GITHUB_REPOSITORY: ${{ github.repository }}
+    #     RELEASE_VERSION: ${{ env.release_version }}
+    #   run: |
+    #     envsubst < teams_template.json | curl -s -H 'Content-Type: application/json' \
+    #         -d @- \
+    #         ${{ secrets.TEAMS_WEBHOOK }}
     
