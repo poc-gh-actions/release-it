@@ -1,5 +1,38 @@
 
 
+## [3.3.0](https://github.com/poc-gh-actions/release-it/compare/v3.2.0...v3.3.0) (2024-09-24)
+
+
+### :rocket: Features
+
+* add new coisa ([efc5290](https://github.com/poc-gh-actions/release-it/commit/efc52903e08d1ee5d081a57d7b91ae53fdd94d85))
+* testando o xuxu ([7e9d192](https://github.com/poc-gh-actions/release-it/commit/7e9d192e7ca7827ea208f5e50efef5e41cf9cd8c))
+
+
+### Continuous Integration
+
+* **commitlint:** update menssages ([952ce04](https://github.com/poc-gh-actions/release-it/commit/952ce045f384a03d047fea30e10a06a83cf20d7e))
+* include log sucesso ([84f15ff](https://github.com/poc-gh-actions/release-it/commit/84f15ff1a8cb3ae8e5004f3227f85a4d817254e5))
+* sucesso ([4f8a6e6](https://github.com/poc-gh-actions/release-it/commit/4f8a6e6b7545e877455c0063277320fd6196e6e0))
+* teste ([cfcf12f](https://github.com/poc-gh-actions/release-it/commit/cfcf12f5225ff33c76f0d68bef2d6888132020ea))
+* update ([3990b4c](https://github.com/poc-gh-actions/release-it/commit/3990b4c22bb8aa2623f2b4565b7f842f177afe32))
+* update ([92a3506](https://github.com/poc-gh-actions/release-it/commit/92a35065d1e6fdefe2ce5b62151db3a47d7ad858))
+* update ([32dbe00](https://github.com/poc-gh-actions/release-it/commit/32dbe003fb0671114f9c93ec7e1d0388d4ec8e11))
+* update ([f37ab06](https://github.com/poc-gh-actions/release-it/commit/f37ab06f5e52b3345a4e72e736fd4bd242c35b8f))
+* update ([3777ae2](https://github.com/poc-gh-actions/release-it/commit/3777ae2f89c5aa9acd9c3909c98e619ac59b85e3))
+* update ([770cd5a](https://github.com/poc-gh-actions/release-it/commit/770cd5a419c203a971c5a8bd2a2170cd9f2026e5))
+* update ([c2820bf](https://github.com/poc-gh-actions/release-it/commit/c2820bfcb4cff7772761276ab981a6b0cdafc71f))
+* update ([1086dd6](https://github.com/poc-gh-actions/release-it/commit/1086dd60dafebee7091de959ed4e4e76dd6a2e17))
+* update commitlint workflow ([0ed78cd](https://github.com/poc-gh-actions/release-it/commit/0ed78cdb392f96cd3a1f18cc85f69bdcaf4ed1fc))
+* **workflow:** add commitlint workflow ([833c2d5](https://github.com/poc-gh-actions/release-it/commit/833c2d5e03c16c2aa0a350b02167b011dde9c055))
+* **workflow:** update commitlint workflow ([6ea1357](https://github.com/poc-gh-actions/release-it/commit/6ea13571b627eed5a9e1ed2fc15125cf47218726))
+
+
+### :house: Internal
+
+* secrets inherit ([ba0df9f](https://github.com/poc-gh-actions/release-it/commit/ba0df9f3c91cd4680a048e7a030645cfe5b1677d))
+* update ([976521a](https://github.com/poc-gh-actions/release-it/commit/976521abef482c2bd073a0c9d35945f78bbf444f))
+
 ## [3.2.0](https://github.com/poc-gh-actions/release-it/compare/v3.1.0...v3.2.0) (2024-09-10)
 
 
