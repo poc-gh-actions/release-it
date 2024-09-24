@@ -1,5 +1,16 @@
 
 
+## [5.0.0](https://github.com/poc-gh-actions/release-it/compare/v4.0.0...v5.0.0) (2024-09-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* atualizando
+
+### :rocket: Features
+
+* atualizando ([cf8c0c3](https://github.com/poc-gh-actions/release-it/commit/cf8c0c384afefcdcccd6ad1387453e22a7354b61))
+
 ## [4.0.0](https://github.com/poc-gh-actions/release-it/compare/v3.3.0...v4.0.0) (2024-09-24)
 
 
