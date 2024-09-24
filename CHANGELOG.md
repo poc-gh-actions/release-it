@@ -1,5 +1,12 @@
 
 
+## [5.0.1](https://github.com/poc-gh-actions/release-it/compare/v5.0.0...v5.0.1) (2024-09-24)
+
+
+### :bug: Bug Fixes
+
+* Ajustando o bug que tava quebrando tudo  ([ad8b804](https://github.com/poc-gh-actions/release-it/commit/ad8b8049f455b031a87e52e6821996a67704910a))
+
 ## [5.0.0](https://github.com/poc-gh-actions/release-it/compare/v4.0.0...v5.0.0) (2024-09-24)
 
 
