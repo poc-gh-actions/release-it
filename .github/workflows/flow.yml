@@ -65,7 +65,7 @@ jobs:
           "themeColor": "0076D7",
           "sections": [{
             "activityTitle": "Título da Atividade",
-            "text": "<at>Geral</at> Olá, esta é uma mensagem com menção ao canal General."
+            "text": "<at>General</at> Olá, esta é uma mensagem com menção ao canal General."
           }],
           "potentialAction": []
         }' "${{ secrets.TEAMS_WEBHOOK }}"
