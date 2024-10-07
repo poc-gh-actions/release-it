@@ -11,49 +11,61 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/create-github-app-token@v1
-      id: app-token
-      with:
-        app-id: ${{ vars.YOUR_GITHUB_APP_ID }}
-        private-key: ${{ secrets.YOUR_GITHUB_APP_PRIVATE_KEY }}
+    # - uses: actions/create-github-app-token@v1
+    #   id: app-token
+    #   with:
+    #     app-id: ${{ vars.YOUR_GITHUB_APP_ID }}
+    #     private-key: ${{ secrets.YOUR_GITHUB_APP_PRIVATE_KEY }}
 
-    - uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-        token: ${{ steps.app-token.outputs.token }}         
+    # - uses: actions/checkout@v3
+    #   with:
+    #     fetch-depth: 0
+    #     token: ${{ steps.app-token.outputs.token }}         
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18.x'
+    # - name: Setup Node.js
+    #   uses: actions/setup-node@v3
+    #   with:
+    #     node-version: '18.x'
 
-    - name: Install the dependencies
-      run: npm install
+    # - name: Install the dependencies
+    #   run: npm install
 
-    - name: Configure Git
-      run: |
-        git config --global user.name "${{ github.actor }}"
-        git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-  
-    - name: Create and publish release
-      id: release
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        npm run release
-
-    - name: Get Latest Tag
-      id: get_tag
-      run: echo "release_version=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
-
-    # - name: Send Teams Notification
-    #   if: steps.release.outcome == 'success'
-    #   env:
-    #     GITHUB_REPOSITORY: ${{ github.repository }}
-    #     RELEASE_VERSION: ${{ env.release_version }}
+    # - name: Configure Git
     #   run: |
-    #     envsubst < teams_template.json | curl -s -H 'Content-Type: application/json' \
-    #         -d @- \
-    #         ${{ secrets.TEAMS_WEBHOOK }}
+    #     git config --global user.name "${{ github.actor }}"
+    #     git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+  
+    # - name: Create and publish release
+    #   id: release
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #   run: |
+    #     npm run release
 
-    
+    # - name: Get Latest Tag
+    #   id: get_tag
+    #   run: echo "release_version=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
+
+    # # - name: Send Teams Notification
+    # #   if: steps.release.outcome == 'success'
+    # #   env:
+    # #     GITHUB_REPOSITORY: ${{ github.repository }}
+    # #     RELEASE_VERSION: ${{ env.release_version }}
+    # #   run: |
+    # #     envsubst < teams_template.json | curl -s -H 'Content-Type: application/json' \
+    # #         -d @- \
+    # #         ${{ secrets.TEAMS_WEBHOOK }}
+
+    - name: Send Teams Notification
+      run: |
+        curl -H "Content-Type: application/json" -d '{
+          "@type": "MessageCard",
+          "@context": "http://schema.org/extensions",
+          "summary": "Mensagem com Menção",
+          "themeColor": "0076D7",
+          "sections": [{
+            "activityTitle": "Título da Atividade",
+            "text": "<at>Geral</at> Olá, esta é uma mensagem com menção ao canal General."
+          }],
+          "potentialAction": []
+        }' "${{ secrets.TEAMS_WEBHOOK }}"
